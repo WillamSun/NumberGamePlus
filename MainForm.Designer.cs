@@ -40,6 +40,7 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topMostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showSumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,6 +168,7 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontToolStripMenuItem,
             this.fontToolStripMenuItem1,
+            this.resetFontToolStripMenuItem,
             this.topMostToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
@@ -175,22 +177,29 @@
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.fontToolStripMenuItem.Text = "Font&+";
             this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem1
             // 
             this.fontToolStripMenuItem1.Name = "fontToolStripMenuItem1";
-            this.fontToolStripMenuItem1.Size = new System.Drawing.Size(155, 26);
+            this.fontToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
             this.fontToolStripMenuItem1.Text = "Font&-";
             this.fontToolStripMenuItem1.Click += new System.EventHandler(this.fontToolStripMenuItem1_Click);
+            // 
+            // resetFontToolStripMenuItem
+            // 
+            this.resetFontToolStripMenuItem.Name = "resetFontToolStripMenuItem";
+            this.resetFontToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.resetFontToolStripMenuItem.Text = "&Reset Font";
+            this.resetFontToolStripMenuItem.Click += new System.EventHandler(this.resetFontToolStripMenuItem_Click);
             // 
             // topMostToolStripMenuItem
             // 
             this.topMostToolStripMenuItem.CheckOnClick = true;
             this.topMostToolStripMenuItem.Name = "topMostToolStripMenuItem";
-            this.topMostToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
+            this.topMostToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.topMostToolStripMenuItem.Text = "Keep &Top";
             this.topMostToolStripMenuItem.Click += new System.EventHandler(this.topMostToolStripMenuItem_Click);
             // 
@@ -260,14 +269,14 @@
             // howtoplayToolStripMenuItem1
             // 
             this.howtoplayToolStripMenuItem1.Name = "howtoplayToolStripMenuItem1";
-            this.howtoplayToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.howtoplayToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
             this.howtoplayToolStripMenuItem1.Text = "&How To Play";
             this.howtoplayToolStripMenuItem1.Click += new System.EventHandler(this.howtoplayToolStripMenuItem1_Click);
             // 
             // authorToolStripMenuItem
             // 
             this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.authorToolStripMenuItem.Text = "&Info";
             this.authorToolStripMenuItem.Click += new System.EventHandler(this.authorToolStripMenuItem_Click);
             // 
@@ -697,5 +706,6 @@
         private System.Windows.Forms.ToolStripMenuItem authorToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelExtFea;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelBSoD;
+        private System.Windows.Forms.ToolStripMenuItem resetFontToolStripMenuItem;
     }
 }

@@ -56,6 +56,8 @@ namespace NumberGamePlus
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar <= equation.Numbers.Count() + '0' && e.KeyChar > '0')
+                equation.Numbers[e.KeyChar - '0' - 1].Selected ^= true;
             switch (e.KeyChar)
             {
                 case '+':
@@ -350,7 +352,8 @@ namespace NumberGamePlus
                 aboutToolStripMenuItem,
                 howtoplayToolStripMenuItem1,
                 authorToolStripMenuItem,
-                timingToolStripMenuItem
+                timingToolStripMenuItem,
+                aboutToolStripMenuItem
             };
             SetEnabled(this, !toggle, exclusive);
             SetMenuStripEnabled(menuStrip1, !toggle, exclusive_tsmi, null);
@@ -569,15 +572,28 @@ namespace NumberGamePlus
 
         private void howtoplayToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            var flag = false;
             var paused = pause_cbx.Checked;
             Pause(true);
             for (var i = 1; i <= 6; i++)
+                if (flag =
                 MessageBox.Show(NumberSmash.Properties.Resources.
-                    ResourceManager.GetString("HelpLine" + i), "How To Play");
+                    ResourceManager.GetString("HelpLine" + i)
+                    + "\n\nClick 'Cancel' to exit How To Play.",
+                    "How To Play", MessageBoxButtons.OKCancel)
+                    == DialogResult.Cancel) break;
+            if (flag) return;
             if (extendedFeaturesToggleToolStripMenuItem.Checked)
-                for (var i = 1; i <= 3; i++)
+            {
+                for (var i = 1; i <= 2; i++)
+                    if (
                     MessageBox.Show(NumberSmash.Properties.Resources.
-                        ResourceManager.GetString("ExtHelpLine" + i), "How To Play");
+                        ResourceManager.GetString("ExtHelpLine" + i)
+                        + "\n\nClick 'Cancel' to exit How To Play.",
+                        "How To Play", MessageBoxButtons.OKCancel)
+                        == DialogResult.Cancel) break;
+                MessageBox.Show(NumberSmash.Properties.Resources.ExtHelpLine3, "How To Play");
+            }
             else
                 MessageBox.Show(NumberSmash.Properties.Resources.HelpLine7, "How To Play");
             Pause(paused);
@@ -595,6 +611,14 @@ namespace NumberGamePlus
                 0, MessageBoxIcon.Information, 0, 0,
                 "https://github.com/WillamSun/NumberSmash");
             Pause(paused);
+        }
+
+        private void resetFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Font = new Font(Font.FontFamily, 7.5f, GraphicsUnit.Point);
+            menuStrip1.Font = new Font(menuStrip1.Font.FontFamily, 9, GraphicsUnit.Point);
+            statusStrip1.Font = new Font(statusStrip1.Font.FontFamily, 9, GraphicsUnit.Point);
+            equation.Font = new Font(equation.Font.FontFamily, 7.8f, GraphicsUnit.Point);
         }
     }
 } 
